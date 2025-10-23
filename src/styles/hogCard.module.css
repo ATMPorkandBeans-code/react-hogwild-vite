@@ -1,0 +1,13 @@
+.xtraContent {
+  color: black;
+}
+
+.xtraContentNone {
+  display: none;
+}
+.hidePig {
+  display: none;
+}
+.showPig {
+  color: black;
+}
