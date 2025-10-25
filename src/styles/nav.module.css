@@ -1,0 +1,48 @@
+/* Nav.module.css */
+
+.navWrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 1.5rem 0;
+  background-color: #fffbf5;
+  border-bottom: 2px solid #f1e4d3;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+}
+
+/* Title */
+.headerText {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #d9746a;
+  margin-bottom: 0.5rem;
+  letter-spacing: 2px;
+}
+
+/* Pig image container */
+.twirlyPig {
+  animation: spin 8s linear infinite;
+  margin-bottom: 0.5rem;
+}
+
+.logo {
+  width: 80px;
+  height: 80px;
+}
+
+/* Subtitle text */
+.normalText {
+  font-size: 1.1rem;
+  color: #555;
+  margin-top: 0.5rem;
+}
+
+/* Fun spinning animation */
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}

@@ -3,6 +3,7 @@ import Nav from "./Nav";
 import HogList from "./hogList";
 import HogForm from "./hogForm";
 import hogs from "../porkers_data";
+import styles from "../styles/app.module.css";
 
 function App() {
   const [sort, setSort] = useState("name");
@@ -12,6 +13,10 @@ function App() {
     setEdit((prevItems) => [...prevItems, newHog]);
 
     console.log(editHogs);
+  }
+
+  function hideHog(hogToHide) {
+    setEdit((prevItems) => prevItems.filter((h) => h.name !== hogToHide.name));
   }
 
   useEffect(() => {
@@ -36,16 +41,26 @@ function App() {
   }
 
   return (
-    <div className="App">
+    <div className={styles.appContainer}>
       <Nav />
-      <HogForm addHog={addHog} />
-      <h1>Hog List</h1>
-      <label htmlFor="my-dropdown">Sort by: </label>
-      <select onChange={(e) => setSort(e.target.value)}>
-        <option value="name">Name (A-Z)</option>
-        <option value="weight">Weight(Low to High)</option>
-      </select>
-      <HogList hogs={editHogs} />
+      <div className={styles.content}>
+        <HogForm addHog={addHog} />
+        <div className={styles.headerSection}>
+          <h1>Hog List</h1>
+          <div className={styles.sortSection}>
+            <label htmlFor="my-dropdown">Sort by: </label>
+            <select
+              id="my-dropdown"
+              onChange={(e) => setSort(e.target.value)}
+              className={styles.sortDropdown}
+            >
+              <option value="name">Name (A-Z)</option>
+              <option value="weight">Weight(Low to High)</option>
+            </select>
+          </div>
+        </div>
+        <HogList hogs={editHogs} hideHog={hideHog} />
+      </div>
     </div>
   );
 }
