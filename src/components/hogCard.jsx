@@ -19,7 +19,11 @@ function HogCard({ hog, hideHog }) {
     <div>
       <button onClick={handleHidePigClick}>Hide Me</button>
       <div className={hiddenHog ? styles.hidePig : styles.showPig}>
-        <Card aria-label="hog card" onClick={handleHideClick} className="ui card">
+        <Card
+          aria-label="hog card"
+          onClick={handleHideClick}
+          className="ui card"
+        >
           <Image
             src={hog.image}
             alt={`Photo of ${hog.name}`}
